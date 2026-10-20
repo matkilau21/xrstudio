@@ -38,7 +38,7 @@ export default function Viewport() {
     orbit.enableDamping = true;
     const transform = new TransformControls(camera, renderer.domElement);
     transform.addEventListener("dragging-changed", (event: any) => { orbit.enabled = !event.value; });
-    scene.add(transform);
+    scene.add(transform.getHelper());
 
     const meshes = new Map<string, THREE.Mesh>();
     const raycaster = new THREE.Raycaster();
